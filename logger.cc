@@ -19,7 +19,7 @@ int main(void)
 
     modbus_read_registers(mb, 1090, 4, tab_reg);
     int operation_state = tab_reg[0];
-    int outdoor_ambient_temperature = tab_reg[1];
+    int outdoor_ambient_temperature = (tab_reg[1] < 32767 ? tab_reg[1] : tab_reg[1] - 65536);
     int water_inlet_unit_temperature = tab_reg[2]; 
     int water_outlet_unit_temperature = tab_reg[3]; 
 

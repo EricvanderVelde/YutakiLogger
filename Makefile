@@ -1,4 +1,4 @@
-CFLAGS=-I../influxdb-cpp $(shell pkg-config --cflags libmodbus)
+CFLAGS=-O2 -I../influxdb-cpp $(shell pkg-config --cflags libmodbus)
 LIBS=$(shell pkg-config --libs libmodbus)
 
 EXEC = YutakiLogger
